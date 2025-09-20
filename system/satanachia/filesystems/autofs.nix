@@ -7,6 +7,7 @@ let
 	hermesArchive = pkgs.writeText "hermesArchive" ''
 		archive -fstype=cifs,username=Workspace0,password=Workspace0,mfsymlinks,acl,uid=1000,gid=100 ://HERMES/archive
 	'';
+in
 {
 	services.autofs = {
 		enable = true;
