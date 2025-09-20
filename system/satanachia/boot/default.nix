@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-	boot.kernelPackages = pkgs.linuxKernel.kernels.linux_lqx;
+	boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
 	boot.kernelParams = [
 		"scheduler=pds" "mitigations=off"
 		#"i915.enable_guc=3 i915.enable_fbc=1 i915.enable_psr=1 i915.enable_dc=2"

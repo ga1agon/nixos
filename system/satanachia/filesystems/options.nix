@@ -1,12 +1,21 @@
 { pkgs, config, ... }:
 {
-	fileSystems."/".options = [ "noatime" "nodiratime" ];
-	fileSystems."/tmp".options = [ "size=8G" "noatime" "nodiratime" ];
+	fileSystems."/" = {
+		device = "rootfs";
+		fsType = "tmpfs";
+		options = [ "noatime" "nodiratime" ];
+	};
+	
+	fileSystems."/" = {
+		device = "tmpfs";
+		fsType = "tmpfs";
+		options = [ "size=8G" "noatime" "nodiratime" ];
+	};
 
-	#fileSystems."/@".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
-	#fileSystems."/home".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
-	#fileSystems."/nix".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
-	#fileSystems."/@/data".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
+	fileSystems."/@".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
+	fileSystems."/@/data".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
+	fileSystems."/home".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
+	fileSystems."/nix".options = [ "compress=zstd:1" "space_cache=v2" "discard=async" "commit=60" "noatime" "nodiratime" "ssd" ];
 
 	fileSystems."/@".neededForBoot = true;
 
