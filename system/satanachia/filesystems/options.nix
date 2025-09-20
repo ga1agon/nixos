@@ -6,7 +6,7 @@
 		options = [ "noatime" "nodiratime" ];
 	};
 	
-	fileSystems."/" = {
+	fileSystems."/tmp" = {
 		device = "tmpfs";
 		fsType = "tmpfs";
 		options = [ "size=8G" "noatime" "nodiratime" ];
