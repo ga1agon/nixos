@@ -17,7 +17,7 @@
 								type = "filesystem";
 								format = "vfat";
 								mountpoint = "/boot";
-								mountOptions = [ "noatime" "umask=0777" "iocharset=utf-8" ];
+								mountOptions = [ "noatime" "umask=0777" "iocharset=utf8" ];
 							};
 						};
 						nixos = {
