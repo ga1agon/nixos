@@ -30,7 +30,7 @@
 		};
 	};
 
-	boot.sysfs = {
+	boot.kernel.sysfs = {
 		devices.system.cpu."cpu[0-9]*".power.energy_perf_bias = "8";
 	};
 
