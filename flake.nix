@@ -18,11 +18,9 @@
 		# Visual Studio Code extensions
 		nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
-		# wired-notify notification daemon
-		#wired.url = "github:Toqozz/wired-notify";
-
 		# Stylix
-		#stylix.url = "github:danth/stylix";
+		stylix.url = "github:nix-community/stylix";
+		stylix.inputs.nixpkgs.follows = "nixpkgs";
 
 		nix-index-database.url = "github:nix-community/nix-index-database";
 		nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,28 +30,14 @@
 
 		# nix-alien
 		nix-alien.url = "github:thiagokokada/nix-alien";
-
-		# cerberus-specific stuff
-		#linux-rockchip = { url = "github:armbian/linux-rockchip/rk-6.1-rkr1"; flake = false; };
-		#kbin = { url = "github:armbian/rkbin"; flake = false; };
-		#uboot = { url = "github:u-boot/u-boot/v2024.07-rc2"; flake = false; };
-		#armbian-firmware = { url = "github:armbian/firmware"; flake = false; };
-		#mesa-updated = { url = "github:K900/nixpkgs/mesa-24.1"; };
-
-		#nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 	};
 
 	outputs = {
 		nixpkgs,
 		nur,
-		#mesa-updated,
 		home-manager,
 		impermanence,
-		#wired,
-		#linux-rockchip,
-		#rkbin,
-		#uboot,
-		#armbian-firmware,
+		stylix,
 		nix-index-database,
 		nix-alien,
 		#nixos-cosmic,
@@ -111,8 +95,9 @@
 					}
 
 					nur.modules.nixos.default
-					./system/satanachia
 					nix-index-database.nixosModules.nix-index
+					stylix.nixosModules.stylix
+					./system/satanachia
 
 					{
 						networking.hostName = "satanachia";
