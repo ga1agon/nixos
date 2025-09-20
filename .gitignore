@@ -1,0 +1,10 @@
+**/e16/cfg/cached/
+**/e16/cfg/backgrounds/*
+**/e16/cfg/themes/*
+result
+firmware-dump/
+
+*.env
+*.key
+**/*.env
+**/*.key

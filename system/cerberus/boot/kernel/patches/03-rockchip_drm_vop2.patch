@@ -1,0 +1,12 @@
+diff '--color=auto' -urpN a/drivers/gpu/drm/rockchip/rockchip_drm_vop2.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop2.c
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop2.c	2024-06-18 20:12:05.619878299 +0200
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop2.c	2024-06-18 20:41:16.190815345 +0200
+@@ -9221,6 +9221,8 @@ static void vop2_setup_layer_mixer_for_v
+ 	if (new_layer_cfg != old_layer_cfg)
+ 		VOP_CTRL_SET(vop2, ovl_cfg_done_port, vp->id);
+ 	VOP_CTRL_SET(vop2, ovl_port_mux_cfg_done_imd, 0);
++
++	vop2_setup_port_mux(vp);
+ }
+ 
+ static void vop3_setup_layer_sel_for_vp(struct vop2_video_port *vp,
