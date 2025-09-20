@@ -1,6 +1,7 @@
 {
 	stdenvNoCC,
 	lib,
+	...
 }:
 stdenvNoCC.mkDerivation {
 	pname = "jura-font";
