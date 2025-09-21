@@ -43,14 +43,14 @@
 	];
 
 	environment.systemPackages = with pkgs; [
-		gnome.gnome-shell-extensions
-		gnome.gnome-tweaks
-		gnome.dconf-editor
+		gnome-shell-extensions
+		gnome-tweaks
+		dconf-editor
 
-		cinnamon.nemo-with-extensions
-		cinnamon.nemo-fileroller
+		nemo-with-extensions
+		nemo-fileroller
 
-		gnome.adwaita-icon-theme
+		adwaita-icon-theme
 		
 		gthumb # image viewer
 
