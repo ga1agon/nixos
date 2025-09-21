@@ -9,7 +9,7 @@
 		core-developer-tools.enable = false;
 		games.enable = false;
 
-		gnome-online-miners.enable = lib.mkForce false;
+		#gnome-online-miners.enable = lib.mkForce false;
 		gnome-online-accounts.enable = lib.mkForce true;
 		gnome-initial-setup.enable = lib.mkForce false;
 		gnome-remote-desktop.enable = lib.mkForce true;
