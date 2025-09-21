@@ -10,12 +10,12 @@ in
 		base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary.yaml";
 
 		fonts = {
-			serif = {
+			sansSerif = {
 				package = jura;
 				name = "Jura";
 			};
 
-			sansSerif = {
+			serif = {
 				package = garamond;
 				name = "EB Garamond";
 			};

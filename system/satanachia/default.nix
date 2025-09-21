@@ -132,7 +132,7 @@
 	};
 
 	## firewall
-	networking.firewall.allowedTCPPorts = [ 3240 ];
+	networking.firewall.allowedTCPPorts = [ 3240 22 ];
 	# networking.firewall.allowedUDPPorts = [ ... ];
 	networking.firewall.enable = true;
 	networking.firewall.checkReversePath = false;

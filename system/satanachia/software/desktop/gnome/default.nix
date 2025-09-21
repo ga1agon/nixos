@@ -1,31 +1,21 @@
 { pkgs, lib, ... }: {
-	services = {
-		xserver = {
-			enable = true;
-
-			excludePackages = [
-				pkgs.xterm
-			];
-		};
-		
-		gnome = {
-			core-os-services.enable = true;
-			core-shell.enable = true;
-			core-utilities.enable = true;
-			core-developer-tools.enable = false;
-			games.enable = false;
-		};
-	};
-
 	services.displayManager.gdm.enable = true;
 	services.desktopManager.gnome.enable = true;
+	
+	services.gnome = {
+		core-os-services.enable = true;
+		core-shell.enable = true;
+		core-utilities.enable = true;
+		core-developer-tools.enable = false;
+		games.enable = false;
 
-	services.gnome.gnome-online-miners.enable = lib.mkForce false;
-	services.gnome.gnome-online-accounts.enable = lib.mkForce true;
-	services.gnome.gnome-initial-setup.enable = lib.mkForce false;
-	services.gnome.gnome-remote-desktop.enable = lib.mkForce true;
-	services.gnome.rygel.enable = lib.mkForce true;
-	services.gnome.sushi.enable = lib.mkForce false;
+		gnome-online-miners.enable = lib.mkForce false;
+		gnome-online-accounts.enable = lib.mkForce true;
+		gnome-initial-setup.enable = lib.mkForce false;
+		gnome-remote-desktop.enable = lib.mkForce true;
+		rygel.enable = lib.mkForce true;
+		sushi.enable = lib.mkForce false;
+	};
 
 	services.packagekit.enable = lib.mkForce false;
 	services.power-profiles-daemon.enable = lib.mkForce true;
