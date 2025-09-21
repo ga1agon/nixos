@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
 	services.displayManager.gdm.enable = true;
 	services.desktopManager.gnome.enable = true;
-	
+
 	services.gnome = {
 		core-os-services.enable = true;
 		core-shell.enable = true;
@@ -23,7 +23,7 @@
 	programs.gnome-terminal.enable = lib.mkForce true;
 	programs.geary.enable = lib.mkForce true;
 
-	environment.gnome.excludePackages = (with pkgs; [
+	environment.gnome.excludePackages = with pkgs; [
 		gnome-tour
 		gnome-user-docs
 		orca
@@ -31,7 +31,6 @@
 		gnome-photos
 		loupe
 		simple-scan
-	]) ++ (with pkgs.gnome; [
 		yelp
 		cheese
 		epiphany
@@ -41,7 +40,7 @@
 		gnome-music
 		nautilus
 		totem
-	]);
+	];
 
 	environment.systemPackages = with pkgs; [
 		gnome.gnome-shell-extensions
