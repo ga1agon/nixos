@@ -1,12 +1,12 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 {
-	fileSystems."/" = {
+	fileSystems."/" = lib.mkForce {
 		device = "rootfs";
 		fsType = "tmpfs";
 		options = [ "noatime" "nodiratime" ];
 	};
 	
-	fileSystems."/tmp" = {
+	fileSystems."/tmp" = llib.mkForce {
 		device = "tmpfs";
 		fsType = "tmpfs";
 		options = [ "size=8G" "noatime" "nodiratime" ];
