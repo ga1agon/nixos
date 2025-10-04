@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: {
 	imports = [
-		./desktop/hyprland.nix
+		#./desktop/hyprland.nix
+		./desktop/gnome.nix
 	];
 
 	hardware.logitech.wireless.enable = true;
