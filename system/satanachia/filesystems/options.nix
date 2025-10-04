@@ -6,7 +6,7 @@
 		options = [ "noatime" "nodiratime" ];
 	};
 	
-	fileSystems."/tmp" = llib.mkForce {
+	fileSystems."/tmp" = lib.mkForce {
 		device = "tmpfs";
 		fsType = "tmpfs";
 		options = [ "size=8G" "noatime" "nodiratime" ];
