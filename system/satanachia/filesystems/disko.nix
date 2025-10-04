@@ -45,8 +45,7 @@
 						size = "100%FREE";
 
 						content = {
-							type = "filesystem";
-							format = "btrfs";
+							type = "btrfs";
 							extraArgs = [ "-f" "-d single" "-m dup" ];
 
 							subvolumes = {
